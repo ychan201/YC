@@ -11,15 +11,15 @@ import java.util.Set;
  * 출력결과 아이디 이름 나이
  * 
  */
-class Member {
+class Member2 {
 	String id;
 	String name;
 	int age;
 
-	Member() {
+	Member2() {
 	}
 
-	Member(String id, String name, int age) {
+	Member2(String id, String name, int age) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
@@ -45,7 +45,7 @@ class Member {
 public class Exam_sun {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Set<Member> set = new HashSet<Member>();
+		Set<Member2> set = new HashSet<Member2>();
 		System.out.println("아이디,이름,나이를 입력하세요");
 
 		while (true) {
@@ -54,7 +54,7 @@ public class Exam_sun {
 			if (arr[0].equalsIgnoreCase("0"))
 				break;
 
-			Member mem = new Member(arr[0], arr[1], Integer.parseInt(arr[2]));
+			Member2 mem = new Member2(arr[0], arr[1], Integer.parseInt(arr[2]));
 
 			boolean bool = set.contains(mem);
 			if (bool) {
@@ -65,9 +65,9 @@ public class Exam_sun {
 		}
 		System.out.println("아이디\t이름\t나이");
 
-		Iterator<Member> iter = set.iterator();
+		Iterator<Member2> iter = set.iterator();
 		while (iter.hasNext()) {
-			Member m = iter.next();
+			Member2 m = iter.next();
 			System.out.println("\t");
 		}
 	}

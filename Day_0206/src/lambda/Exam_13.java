@@ -14,7 +14,7 @@ class AA{
 public class Exam_13 {
 	public static void main(String[] args) {
 		AA a = new AA();
-		a.test();
+		a.test(1,2);
 		
 //		()->{System.out.print("AAA")};
 //		(int a, int b) ->{return 11;};

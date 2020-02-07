@@ -1,5 +1,6 @@
 content_assist_completion_replacement_background=200,200,0
 content_assist_completion_replacement_foreground=194,0,0
+content_assist_number_of_computers=21
 content_assist_parameters_background=48,54,59
 content_assist_parameters_foreground=235,237,239
 content_assist_proposals_background=48,54,59
@@ -21,6 +22,8 @@ java_operator=216,216,216
 java_single_line_comment=199,221,12
 java_string=255,198,0
 matchingBracketsColor=244,245,246
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
 org.eclipse.jdt.ui.formatterprofiles.version=16
 org.eclipse.jdt.ui.text.code_templates_migrated=true
 org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
