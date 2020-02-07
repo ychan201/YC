@@ -7,7 +7,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeSet;
 
 /* 파일로부터 입력
  * 출력 예시 ( 파일 출력 dataout.txt , 콘솔 출력 )
@@ -18,6 +20,7 @@ import java.util.*;
 public class StudentExam {
 	public static void main(String[] args) throws Exception{
 		List<Student> list = new ArrayList<Student>();
+		TreeSet<Student> set = new TreeSet<Student>();
 		BufferedReader br = new BufferedReader(new FileReader(new File("c:\\data\\data.txt")));
 		String data="";
 		while(true) {
@@ -25,13 +28,13 @@ public class StudentExam {
 			if(data==null) break;
 			String[] s = data.split(",");
 			Student st = new Student(s);
-			list.add(st);
+			set.add(st);
 		}
 		
 		PrintWriter pw  = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 		PrintWriter pwf  = new PrintWriter(new BufferedWriter(new FileWriter(new File("c:\\data\\dataout.txt"))));
 
-		for(Student s :list) {
+		for(Student s :set) {
 			pw.println(s);
 			pwf.println(s);
 		}

@@ -1,6 +1,6 @@
 package textstream;
 
-public class Student {
+public class Student implements Comparable<Student>  {
 	int bun;
 	String name,gender;
 	int score[]=new int[3],tot;
@@ -23,4 +23,24 @@ public class Student {
 		// TODO Auto-generated method stub
 		return bun+"\t"+name+"\t"+gender+"\t"+score[0]+"\t"+score[1]+"\t"+score[2]+"\t"+tot+"\t"+avg;
 	}
+	
+//	@Override
+//	public boolean equals(Object obj) {
+//		if(obj instanceof Student) {
+//			Student s = (Student)obj;
+//			return s.bun==bun;
+//		}
+//		return false;
+//	}
+//	@Override
+//	public int hashCode() {
+//		return bun;
+//	}
+	@Override
+	public int compareTo(Student o) {
+		if(bun<o.bun) return -1;
+		else if(bun==o.bun) return 0;
+		else return 1;
+	}
+	
 }
