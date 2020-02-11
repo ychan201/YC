@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정보처리 산업기사 실기 연습</title>
+<style type="text/css">
+	* {/*margin:0; padding:0;*/ box-sizing:border-box;}
+	#aaa{color:#f00; font-size:26px; letter-spacing:-1px;
+		 border:1px solid #00f; margin-bottom:60px; line-height:60px;}
+	.bbb{color:#ccc;/*컬러*/ font-size:18px; font-familly:"궁서체";
+		 border:1px solid #ccc;/*선그리기*/ width:600px; height:60px;/*가로세로폭*/
+		 text-align:center;/*가운데정렬*/ line-height:60px;/*그룹내 줄 높이*/
+		 margin:0 auto;/*마진:가로,세로 -그룹을 가운데 정렬 */background:#00f;/*배경색*/}
+	.list{list-style:none;/*앞에 똥글뱅이 사용 안함*/}
+	.navi .list li{display:inline-block;/*li의 가로길이 100%가, inline(글자의 가로폭만큼)변경
+	100%로 변경 시에는 block, block 스타일 시트를 inline 요소에 적용한다. */width:120px;
+	text-align:center; }
+	a{/* 태그에 직접 스타일 시트를 부여 할 수 있다.*/
+	color:#000; /*흰색 fff RGB*/ text-decoration:none;
+	}
+	table, th, td{
+		border:1px solid #000;
+	}
+	.shopList{margin:0 auto; text-align:center;}
+	#aaa h1{text-align:center;/* 블럭요소 태그이기 때문 */}
+	#aaa {text-align:center;background:#fff;color:#000;}
+</style>
+</head>
+<body>
+<div id="aaa">
+	<h1>정보처리 산업기사</h1>
+	&lt;div&gt;태그는 &nbsp;&nbsp;&nbsp;그룹을 만드는 태그 입니다.&lt;/div&gt;
+</div>
+
+<div class="bbb">
+	그룹 만들기 연습중 입니다
+</div>
+<div class="navi">
+	<ul class="list">
+	<!--  순서가 없는 목록 태그 ul -->
+		<li><a href="com.jsp">회사소개</a></li> <!-- navi 밑에있는 list 밑에있는 li의 스타일을 바꾼다. 하위 선택자  -->
+		<li><a href="insert.html">상품등록</a></li>
+		<li><a href="search.jsp">상품검색</a></li>
+		<li><a href="member.jsp?command==aaa">회원가입</a></li>
+		<li><a href="delete.html">상품삭제</a></li>
+	</ul>
+	</div>
+	<div class="container">
+	<!-- 표 만들기 --> <!-- name은 form명. 사용자 정의 가능 -->
+	<!-- method get,post get은 소량 데이터 전송 눈에 보임.post는 대량, 눈에 안보임 -->
+	<!-- action은 데이터 처리 -->
+	<form name="my" method="post" action="memberInsert.jsp">
+		<table class="shopList">
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="id"></td> <!-- name은 임시기억장소 -->
+			</tr>
+			<tr>
+				<th>패스워드</th>
+				<td><input type="password" name="pw"></td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<input type="radio" name="gender" value="t" checked>남
+					<input type="radio" name="gender" value="m">여
+				</td>
+			<tr>
+				<th>취미</th>
+				<td> <!-- jsp로 전송하면, 배열의 형태로 넘어간다. -->
+					<input type="checkbox" name="hobby" value="01">낚시
+					<input type="checkbox" name="hobby" value="02">등산
+					<input type="checkbox" name="hobby" value="03">볼링
+					<input type="checkbox" name="hobby" value="04">게임
+					<input type="checkbox" name="hobby" value="05">여행
+				</td>
+			</tr>
+			<tr>
+				<th>부서</th>
+				<td>
+					<select name="dept">
+						<option>선택</option>
+						<option value="aa">교육부</option>
+						<option value="bb">홍보부</option>
+						<option value="cc">영업부</option>
+						<option value="dd">경리부</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<a href="index.html">뒤로가기</a>&nbsp;&nbsp;&nbsp;
+					<input type="submit" value="저장">&nbsp;&nbsp;
+					<!-- 입력받은 모든 값을 action="" 프로그램으로 전송하여 처리하세요. -->
+					<input type="reset" value="다시쓰기">
+				</td>
+		</table>
+	</form>
+	</div>
+	<div class="footer">
+		<p> copyright All rights reserved.</p>
+	</div>
+
+</body>
+</html>

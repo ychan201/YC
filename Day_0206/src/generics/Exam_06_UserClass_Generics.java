@@ -1,30 +1,30 @@
-package generics;
-
-class Box{
-	
-	private Object obj;  // object´Â ¹«¾ùÀÌµç ´ãÀ»¼ö(ÀúÀåÇÒ ¼ö) ÀÖ´Â °´Ã¼ÀÌ´Ù.
-	
-	public void set(Object o) {
-		obj=o; 
-	}
-	
-	public Object get() {
-		return obj;
-	}
-}
-
-class Apple{
-	
-}
-
-
-public class Exam_06_UserClass_Generics {
-	public static void main(String[] args) {
-//		Box<String> box = new Box<String>();   - Å¬·¡½º »ý¼º½Ã generics À» »ç¿ëÇÒ °ÍÀÌ¶ó°í ¾Ë·ÁÁà¾ßÇÔ.
-		box.set("È«±æµ¿");
-		String name = (String)box.get();
-		
-		box.set(new Apple());
-		Apple Ap = (Apple)box.get();
-	}
-}
+//package generics;
+//
+//class Box{
+//	
+//	private Object obj;  // objectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½) ï¿½Ö´ï¿½ ï¿½ï¿½Ã¼ï¿½Ì´ï¿½.
+//	
+//	public void set(Object o) {
+//		obj=o; 
+//	}
+//	
+//	public Object get() {
+//		return obj;
+//	}
+//}
+//
+//class Apple{
+//	
+//}
+//
+//
+//public class Exam_06_UserClass_Generics {
+//	public static void main(String[] args) {
+////		Box<String> box = new Box<String>();   - Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ generics ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+//		box.set("È«ï¿½æµ¿");
+//		String name = (String)box.get();
+//		
+//		box.set(new Apple());
+//		Apple Ap = (Apple)box.get();
+//	}
+//}
