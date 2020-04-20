@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import oracle.db.DBManager;
-import oracle.dto.DeptDTO;
 import oracle.dto.EmpDTO;
 public class EmpDAO {
 	DBManager manager = DBManager.getInstance();
@@ -22,6 +21,72 @@ public class EmpDAO {
 		try {
 			conn = manager.getConnection();
 			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				EmpDTO dto = new EmpDTO();
+				dto.setEno(rs.getInt("eno"));
+				dto.setEname(rs.getString("ename"));
+				dto.setJob(rs.getString("job"));
+				dto.setManager(rs.getInt("manager"));
+				dto.setHiredate(rs.getString("hiredate"));
+				dto.setSalary(rs.getInt("salary"));
+				dto.setCommission(rs.getInt("commission"));
+				dto.setDno(rs.getInt("dno"));
+				
+				list.add(dto);
+			}
+		}catch(Exception e) {}
+		finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			}catch(Exception ee) {}
+		}
+		return list;
+	}
+	
+	public EmpDTO selectEmp(int dno, String job) {
+		String query = "select * from employee where dno=? and job=?";
+		EmpDTO dto = null;
+		try {
+			conn=manager.getConnection();
+			pstmt=conn.prepareStatement(query);
+			pstmt.setInt(1, dno);
+			pstmt.setString(2, job);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				dto = new EmpDTO();
+				dto.setEno(rs.getInt("eno"));
+				dto.setEname(rs.getString("ename"));
+				dto.setJob(rs.getString("job"));
+				dto.setManager(rs.getInt("manager"));
+				dto.setHiredate(rs.getString("hiredate"));
+				dto.setSalary(rs.getInt("salary"));
+				dto.setCommission(rs.getInt("commission"));
+				dto.setDno(rs.getInt("dno"));
+			}
+		}catch(Exception e) {}
+		finally {
+				try {
+					if(rs != null) rs.close();
+					if(pstmt != null) pstmt.close();
+					if(conn != null) conn.close();
+				}catch(Exception ee) {}
+		}
+		
+		return dto;
+	}
+	
+	public List<EmpDTO> empSerchList(int dno,String job){
+		String query = "select * from employee where dno=? or job=?";
+		//리턴타입 정의
+		List<EmpDTO> list = new ArrayList<EmpDTO>();
+		try {
+			conn = manager.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, dno);
+			pstmt.setString(2, job);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				EmpDTO dto = new EmpDTO();

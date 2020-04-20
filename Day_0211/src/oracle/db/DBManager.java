@@ -1,5 +1,6 @@
 package oracle.db;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 public class DBManager {
 	private DBManager() {} // 외부에서 객체생성 금지 - 싱글 톤 방식. 커넥션을 하나를 열어놓고, 공유하는 방식
 	private static DBManager instance = new DBManager(); // 자체적으로 객체 생성.

@@ -1,6 +1,6 @@
 package oracle.dto;
 
-public class EmpDTO {
+public class EmpDTO{
 	private int eno;
 	private String ename;
 	private String job;
